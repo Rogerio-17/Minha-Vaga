@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../db/connection");
 
-const Vaga = db.define(vagas, {
+const Vaga = db.define("vagas", {
   title: {
     type: Sequelize.STRING,
   },
@@ -22,7 +22,7 @@ const Vaga = db.define(vagas, {
     type: Sequelize.STRING,
   },
 
-  new: {
+  new_job: {
     type: Sequelize.STRING,
   },
 });

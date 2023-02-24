@@ -1,13 +1,16 @@
 const express = require("express");
-app = express();
+const app = express();
 const db = require("./db/connection");
+const bodyParse = require("body-parser");
 
-const PORT = 3000;
+const PORT = 3001;
 
 app.listen(PORT, function () {
   console.log(`O express esta rodando na porta ${PORT}`);
 });
 
+// BodyParse
+app.use(bodyParse.urlencoded({ extended: false }));
 // db conection
 db.authenticate()
   .then(() => {
@@ -21,3 +24,6 @@ db.authenticate()
 app.get("/", (req, res) => {
   res.send("Projeto está funcionando 5");
 });
+
+// route vagas
+app.use("/vagas", require("./routes/vagas"));
