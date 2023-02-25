@@ -23,7 +23,7 @@ const Vaga = db.define("vagas", {
   },
 
   new_job: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
   },
 });
 
