@@ -101,3 +101,122 @@
   background-color: #e64f4f;
   transform: scale(1.04);
 }
+
+/* lista */
+#vagas-container {
+  padding: 0 100px;
+  padding-bottom: 50px;
+}
+
+#vaga-list .list-group-item {
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  padding: 15px 80px;
+  color: #212529;
+}
+
+#vaga-list .list-group-item p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+#vaga-list .list-group-item.new-vaga {
+  background-color: rgba(230, 230, 230, 0.521);
+}
+
+#vagas-list-title {
+  margin-bottom: 35px;
+  padding-left: 35px;
+}
+
+.list-group-item img {
+  height: 90px;
+  border: 1px solid rgb(151, 151, 151);
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  left: -40px;
+  top: calc(50%-40px);
+}
+
+.list-group-item a {
+  background-color: #f03e3e;
+  border: 1px solid transparent;
+  border: none;
+  position: absolute;
+  padding: 8px;
+  right: 2%;
+  top: 35%;
+
+  transition: 0.3s;
+}
+
+.list-group-item a:hover {
+  background-color: #fff;
+  color: #f03e3e;
+  border: 1px solid #f03e3e;
+  transform: scale(1.04);
+}
+
+.new-job-label {
+  background-color: rgb(10, 52, 240);
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px 10px;
+  right: 20%;
+  top: 36%;
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+}
+
+.new-vaga .new-job-label {
+  display: block;
+}
+
+/* add page */
+
+#add-form-container {
+  margin-top: 100px;
+}
+
+#form-box {
+  background-color: rgba(233, 233, 233, 0.247);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
+}
+
+#add-form-container h1 {
+  margin-bottom: 20px;
+}
+
+#add-form-container h2 {
+  color: #f03e3e;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+#add-form-container form label {
+  font-weight: bold;
+}
+
+#add-form-container form input,
+#add-form-container form textarea {
+  border: 2px solid #ccc;
+}
+
+#form-box button {
+  padding: 10px;
+  border: 1px solid transparent;
+  transition: 0.3s;
+}
+
+#form-box button:hover {
+  background-color: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+}

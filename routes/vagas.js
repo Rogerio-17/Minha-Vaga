@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const vaga = require("../models/Vaga");
 
-router.get("/test", (req, res) => {
-  res.send("deu certo");
+router.get("/add", (req, res) => {
+  res.render("add");
 });
 // adicionar vaga
 router.post("/add", (req, res) => {
