@@ -135,6 +135,7 @@
   border-radius: 50%;
   background-color: #fff;
   position: absolute;
+  display: block;
   left: -40px;
   top: calc(50%-40px);
 }

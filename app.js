@@ -4,6 +4,9 @@ const app = express();
 const path = require("path");
 const db = require("./db/connection");
 const bodyParse = require("body-parser");
+const vaga = require("./models/Vaga");
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 const PORT = 3000;
 
@@ -33,7 +36,31 @@ db.authenticate()
 
 // routes
 app.get("/", (req, res) => {
-  res.render("index");
+  let search = req.query.vaga;
+  let query = "%" + search + "%";
+
+  if (!search) {
+    vaga.findAll({ order: [["createdAt", "DESC"]] }).then((vagas) => {
+      res.render("index", {
+        vagas,
+      });
+    });
+  } else {
+    vaga
+      .findAll({
+        where: { title: { [Op.like]: query } },
+        order: [["createdAt", "DESC"]],
+      })
+      .then((vagas) => {
+        res.render("index", {
+          vagas,
+          search,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 });
 
 // route vagas
