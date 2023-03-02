@@ -5,6 +5,22 @@ const vaga = require("../models/Vaga");
 router.get("/add", (req, res) => {
   res.render("add");
 });
+
+// detalhe da vaga
+router.get("/view/:id", (req, res) =>
+  vaga
+    .findOne({
+      where: { id: req.params.id },
+    })
+    .then((vaga) => {
+      res
+        .render("view", {
+          vaga,
+        })
+        .catch((err) => console.log(err));
+    })
+);
+
 // adicionar vaga
 router.post("/add", (req, res) => {
   let { title, salary, company, description, email, new_job } = req.body;
