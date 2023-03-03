@@ -13,12 +13,11 @@ router.get("/view/:id", (req, res) =>
       where: { id: req.params.id },
     })
     .then((vaga) => {
-      res
-        .render("view", {
-          vaga,
-        })
-        .catch((err) => console.log(err));
+      res.render("view", {
+        vaga,
+      });
     })
+    .catch((err) => console.log(err))
 );
 
 // adicionar vaga
